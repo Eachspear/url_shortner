@@ -9,10 +9,12 @@ await url.create({
     
     shortId:shortID,
     redirectURL:body.url,
-    visitHistory:[]
+    visitHistory:[],
+    createdBy:req.user._id
 });
-return res.json({id:shortID})
-}
+return res.render("home",{
+    id:shortID
+})}
 
 module.exports={
     shorturl
